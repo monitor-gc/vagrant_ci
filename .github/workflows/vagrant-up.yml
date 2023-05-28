@@ -1,0 +1,16 @@
+name: vagrant-up
+
+on: [push]
+
+jobs:
+  vagrant-up:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run vagrant up
+      run: vagrant up
+
+    - name: ssh into box after boot
+      run: vagrant ssh -c "echo 'hello world!'"
