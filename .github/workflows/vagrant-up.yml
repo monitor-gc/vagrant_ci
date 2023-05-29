@@ -14,4 +14,13 @@ jobs:
       run: vagrant up
 
     - name: ssh into box after boot
-      run: vagrant ssh -c "echo 'hello world!'; ls -ltra ; whoami"
+      run: vagrant ssh -c "echo 'hello world!'"
+      
+    - name: ssh ls
+      run: vagrant ssh -c "ls -ltra"
+    
+    - name: ssh whoami
+      run: vagrant ssh -c "whoami"
+      
+    - name: ssh lsb-release
+      run: vagrant ssh -c "lsb-release -a"
