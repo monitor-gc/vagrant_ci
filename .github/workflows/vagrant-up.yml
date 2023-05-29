@@ -22,5 +22,5 @@ jobs:
     - name: ssh whoami
       run: vagrant ssh -c "whoami"
       
-    - name: ssh lsb-release
-      run: vagrant ssh -c "lsb-release -a"
+    - name: ssh lsb_release
+      run: vagrant ssh -c "lsb_release -a"
