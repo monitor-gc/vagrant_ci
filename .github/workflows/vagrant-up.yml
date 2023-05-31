@@ -21,7 +21,7 @@ jobs:
     
     - name: ssh ls /vagrant
       run: vagrant ssh -c "ls -ltra /vagrant"
-    
+
     - name: ssh whoami
       run: vagrant ssh -c "whoami"
       
