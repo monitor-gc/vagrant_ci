@@ -7,7 +7,7 @@
   become_user: root
 
   tasks:
-  - name: Install packages for ansible 2.4
+  - name: Install packages
     apt:
       name:
        - unzip

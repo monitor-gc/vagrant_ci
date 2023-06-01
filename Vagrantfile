@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
 
     #config.vm.provision "shell", inline: "sudo apt-get upgrade; sudo apt-get install ansible"
     #config.vm.provision "shell", inline: "apt-get -y upgrade"
-    config.vm.provision "shell", inline: "adduser vivek"
+######    config.vm.provision "shell", inline: "adduser vivek"
 
     # Work around https://github.com/chef/bento/issues/661
     # apt-get -qqy upgrade
@@ -20,8 +20,6 @@ Vagrant.configure("2") do |config|
     # Note: By default, Vagrant will try to automatically install Ansible if it is not yet present on the guest machine (see the install option below for more details).
     config.vm.provision  "ansible_local" do |ansible|
     ### https://www.vagrantup.com/docs/provisioning/ansible_common.html
-      ansible.install_mode = "pip"
-      ansible.version = "2.4.6.0"
       ansible.compatibility_mode = "2.0"
       ansible.become = "true"
       ansible.become_user = "root"
