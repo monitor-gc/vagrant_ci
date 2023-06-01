@@ -4,16 +4,16 @@
 - name: Configure all hosts (devops public keys)
   hosts: all
   become: yes
-  become_user: vagrant
+#  become_user: vagrant
 
   tasks:
   - name: Install packages for ansible 2.4
     apt:
       name:
-#       - unzip
+       - unzip
 #       - epel-release
 #       - python-setuptools
-       - python3
+#       - python3
 #       - python3-pip
 #       - python-jinja2
 #       - PyYAML.x86_64

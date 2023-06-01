@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
 
     # Work around https://github.com/chef/bento/issues/661
     # apt-get -qqy upgrade
-    config.vm.provision "shell", inline: 'DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" update'
-    config.vm.provision "shell", inline: 'DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install ansible'
+######    config.vm.provision "shell", inline: 'DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" update'
+######    config.vm.provision "shell", inline: 'DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install ansible'
 
     config.vm.provision  "ansible_local" do |ansible|
     ### https://www.vagrantup.com/docs/provisioning/ansible_common.html
