@@ -2,7 +2,7 @@
 
 ########################################################################################
 - name: Configure all hosts (devops public keys)
-  hosts: localhost
+  hosts: all
   become: yes
   become_user: vagrant
 
