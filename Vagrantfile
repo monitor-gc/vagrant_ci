@@ -20,8 +20,8 @@ Vagrant.configure("2") do |config|
     # Note: By default, Vagrant will try to automatically install Ansible if it is not yet present on the guest machine (see the install option below for more details).
     config.vm.provision  "ansible_local" do |ansible|
     ### https://www.vagrantup.com/docs/provisioning/ansible_common.html
+      ansible.install_mode = "pip"
       ansible.version = "2.4.6.0"
-      ansible.install_mode = :pip
       ansible.compatibility_mode = "2.0"
       ansible.become = "true"
       ansible.become_user = "root"
