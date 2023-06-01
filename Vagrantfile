@@ -17,8 +17,10 @@ Vagrant.configure("2") do |config|
 ######    config.vm.provision "shell", inline: 'DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" update'
 ######    config.vm.provision "shell", inline: 'DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install ansible'
 
+    # Note: By default, Vagrant will try to automatically install Ansible if it is not yet present on the guest machine (see the install option below for more details).
     config.vm.provision  "ansible_local" do |ansible|
     ### https://www.vagrantup.com/docs/provisioning/ansible_common.html
+      ansible.version = "2.4.6.0"
       ansible.compatibility_mode = "2.0"
       ansible.become = "true"
       ansible.become_user = "root"
