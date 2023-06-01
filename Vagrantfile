@@ -14,15 +14,15 @@ Vagrant.configure("2") do |config|
 
     # Work around https://github.com/chef/bento/issues/661
     # apt-get -qqy upgrade
-    #config.vm.provision "shell", inline: 'DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" update'
+    config.vm.provision "shell", inline: 'DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" update'
     config.vm.provision "shell", inline: 'DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install ansible'
 
-#    config.vm.provision "ansible" do |ansible|
-#    ### https://www.vagrantup.com/docs/provisioning/ansible_common.html
-#      ansible.compatibility_mode = "2.0"
-#      ansible.become = "true"
-#      ansible.become_user = "root"
-##     ansible.config_file = "provisioning/ansible.cfg"
-#      ansible.playbook = "provisioning/playbook.yml"
-#    end
+    config.vm.provision  "ansible_local" do |ansible|
+    ### https://www.vagrantup.com/docs/provisioning/ansible_common.html
+      ansible.compatibility_mode = "2.0"
+      ansible.become = "true"
+      ansible.become_user = "root"
+#     ansible.config_file = "provisioning/ansible.cfg"
+      ansible.playbook = "provisioning/playbook.yml"
+    end
 end
