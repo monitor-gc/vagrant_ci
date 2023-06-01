@@ -30,3 +30,6 @@ jobs:
       
     - name: ssh lsb_release
       run: vagrant ssh -c "lsb_release -a"
+    
+    - name: ssh install ansible
+      run: vagrant ssh -c "apt-get install ansible"
