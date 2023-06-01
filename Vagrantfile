@@ -8,7 +8,8 @@ Vagrant.configure("2") do |config|
     #config.vm.synced_folder ".", "/vagrant", disabled: true
     config.vm.synced_folder "./synced_folder", "/vagrant", create: true
 
-    config.vm.provision "shell", inline: "apt install ansible"
+    #config.vm.provision "shell", inline: "apt install ansible"
+    config.vm.provision "shell", inline: "ls"
 
     config.vm.provision "ansible" do |ansible|
     ### https://www.vagrantup.com/docs/provisioning/ansible_common.html
