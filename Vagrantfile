@@ -21,6 +21,7 @@ Vagrant.configure("2") do |config|
     config.vm.provision  "ansible_local" do |ansible|
     ### https://www.vagrantup.com/docs/provisioning/ansible_common.html
       ansible.version = "2.4.6.0"
+      ansible.install_mode = :pip
       ansible.compatibility_mode = "2.0"
       ansible.become = "true"
       ansible.become_user = "root"
