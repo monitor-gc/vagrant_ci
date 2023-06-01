@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     config.vm.synced_folder "./synced_folder", "/vagrant", create: true
 
     #config.vm.provision "shell", inline: "sudo apt-get upgrade; sudo apt-get install ansible"
-    config.vm.provision "shell", inline: "apt-get -qqy upgrade"
+    config.vm.provision "shell", inline: "apt-get -y upgrade"
 
 #    config.vm.provision "ansible" do |ansible|
 #    ### https://www.vagrantup.com/docs/provisioning/ansible_common.html
