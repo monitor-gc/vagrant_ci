@@ -20,7 +20,7 @@ jobs:
       run: vagrant ssh -c "ls -ltra"
     
     - name: ssh ls /vagrant
-      run: vagrant ssh -c "ls -ltra /vagrant; ls -ltr /home""
+      run: vagrant ssh -c "ls -ltra /vagrant; ls -ltr /home"
 
     - name: ssh whoami
       run: vagrant ssh -c "whoami"
